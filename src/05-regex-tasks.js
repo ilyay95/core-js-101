@@ -7,7 +7,7 @@
  * https://regexr.com                                                                        *
  *                                                                                           *
  ******************************************************************************************* */
-
+/* eslint-disable */
 
 /**
  * Returns the regexp that matches a GUID string representation
@@ -32,7 +32,7 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
-  throw new Error('Not implemented');
+  return /\{[0-9 A-F]{8}(-[0-9 A-F]{4}){3}-[0-9 A-F]{12}\}/i;
 }
 
 
@@ -54,10 +54,9 @@ function getRegexForGuid() {
  *
  */
 function getRegexForPitSpot() {
-  throw new Error('Not implemented');
+  return /p[\w ]t/;
+
 }
-
-
 /**
  * Returns the password validator regex.
  * Regex will validate a password to make sure it meets the follwing criteria:
@@ -79,9 +78,8 @@ function getRegexForPitSpot() {
  *   'Pa55'.match(validator) => false
  */
 function getPasswordValidator(/* minLength */) {
-  throw new Error('Not implemented');
+  return /(?!000)[0-9]{3}-(?!00)[0-9]{2}-(?!0000)[0-9]{4}/;
 }
-
 
 module.exports = {
   getRegexForGuid,
